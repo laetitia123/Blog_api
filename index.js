@@ -50,6 +50,6 @@ app.use("/",(req,res)=>{
 
 const port =process.config.PORT || 4040;
 app.listen(port,() => {
-    console.log("backend is runing ON "+port); 
+    console.log(`Server is running on port ${port}`);
     
 });   

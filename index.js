@@ -7,10 +7,11 @@ import postRoute from"./routes/posts";
 import categoryRoute from"./routes/category";
 import multer from"multer";
 import path from"path";
+import cors from "cors";
 
 
 const app = express();
-
+app.use(cors());
 dotenv.config("./.env");
 app.use(express.json());
 // to make image displayed

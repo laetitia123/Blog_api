@@ -13,6 +13,7 @@ const PostSchema = new mongoose.Schema({
     photo: {
         type: String,
         required: false,
+        default: "https://images.pexels.com/photos/3861967/pexels-photo-3861967.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
 
     },
     user: {

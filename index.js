@@ -24,7 +24,7 @@ app.use(cors());
 dotenv.config("./.env");
 app.use(express.json());
 // to make image displayed
-app.use("/images", express.static(path.join(__dirname,"/images")))
+app.use("/api/images", express.static(path.join(__dirname,"/images")))
 // app.get('/', (req, res) => { res.send('Hello from Express!')
 
 mongoose.connect(process.env.DATABASE,{ 
@@ -45,7 +45,7 @@ const storage = multer.diskStorage({
 // coudinary code
 
 
-app.get('/images', async (req, res) => {
+app.get('/api/images', async (req, res) => {
     const { resources } = await cloudinary.search
         .expression('folder:dev_setups')
         .sort_by('public_id', 'desc')
@@ -55,14 +55,14 @@ app.get('/images', async (req, res) => {
     const publicIds = resources.map((file) => file.public_id);
     res.send(publicIds);
 });
-app.post('/upload', async (req, res) => {
+app.post('/api/upload', async (req, res) => {
     try {
         const fileStr = req.body.data;
         const uploadResponse = await cloudinary.uploader.upload(fileStr, {
             upload_preset: 'dev_setups',
         });
         console.log(uploadResponse);
-        res.json({ msg: 'yaya' });
+        res.status(200).json({ msg: 'yaya',imageUrl:uploadResponse.url });
     } catch (err) {
         console.error(err);
         res.status(500).json({ err: 'Something went wrong' });

@@ -19,6 +19,7 @@
     "@babel/register": "^7.12.10",
     "@types/node": "^14.14.22",
     "bcrypt": "^5.0.1",
+    "cloudinary": "^1.27.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

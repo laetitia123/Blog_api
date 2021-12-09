@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from"./routes/auth";
-import userRoute from"./routes/users";
+import userRoute from"./routes/users";  
 import postRoute from"./routes/posts";
 import categoryRoute from"./routes/category";
 import multer from"multer";

@@ -4,9 +4,12 @@ const Post = require("../models/Post");
 
 //CREATE POST
 router.post("/", async (req, res) => {
-  const newPost = new Post(req.body);
+  // const newPost = new Post(req.body);
+    // console.log(req.body);
   try {
-    const savedPost = await newPost.save();
+    // console.log(req.body);
+    const savedPost = await Post.create(req.body)
+    console.log(savedPost);
     return res.status(200).json({ message: "post created success", data: savedPost });
   } catch (err) {
     return res.status(500).json(err);

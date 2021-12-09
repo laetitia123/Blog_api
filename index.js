@@ -9,17 +9,11 @@ import multer from"multer";
 import path from"path";
 import cors from "cors";
 const { cloudinary } = require('./utils/cloudinary');
-// const express = require('express');
 const app = express();
-// var cors = require('cors');
 
 app.use(express.static('public'));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
-app.use(cors());
-
-
-// const app = express();
 app.use(cors());
 dotenv.config("./.env");
 app.use(express.json());

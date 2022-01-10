@@ -8,10 +8,15 @@ router.post("/", async (req, res) => {
     // console.log(req.body);
   try {
     // console.log(req.body);
+    const checkPost = await Post.findOne({title:req.body.title});
+    if(checkPost){
+      return res.status(404).json({error:"please change title"})
+    }
     const savedPost = await Post.create(req.body)
     console.log(savedPost);
     return res.status(200).json({ message: "post created success", data: savedPost });
   } catch (err) {
+    console.log(err)
     return res.status(500).json(err);
   }
 });
@@ -84,12 +89,13 @@ router.get("/", async (req, res) => {
   try {
     let posts;
     if (user) {
-      posts = await Post.find({ user });
+      posts = await Post.find({ user }).sort({ _id: -1 });
     } else if (catName) {
-      posts = await Post.find({category:catName});
+      posts = await Post.find({category:catName}).sort({ _id: -1 });
     } else {
-      posts = await Post.find();
+      posts = await Post.find().sort({ _id: -1 });
     }
+
    return res.status(200).json({message:"success",data:posts});
   } catch (err) {
     return res.status(500).json(err);

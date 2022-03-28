@@ -53,6 +53,10 @@ const applicationFormShema = new mongoose.Schema(
     occupation: {
       type: String,
     },
+    schoolName:String,
+    hourFrom:String,
+    hourTo:String,
+    isScheduled:Boolean
   },
 
   {

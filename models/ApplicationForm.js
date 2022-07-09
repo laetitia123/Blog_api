@@ -11,52 +11,76 @@ const applicationFormShema = new mongoose.Schema(
     email: {
       type: String,
     },
+    age: {
+      type: Number,
+    },
     gender: {
       type: String,
     },
-    phone: {
+    country: {
       type: String,
     },
-    experience: {
-      type: Boolean,
-    },
-    laptop: {
-      type: Boolean,
-    },
-    job: {
-      type: String,
-    },
-    hours: {
-      type: String,
-    },
-    commitment: {
-      type: Boolean,
-    },
-    pay: {
-      type: Boolean,
-    },
-    hears: {
-      type: String,
-    },
-    scholarship: {
-      type: String,
-    },
-    dream: {
-      type: String,
-    },
-    sector: {
+    province: {
       type: String,
     },
     district: {
       type: String,
     },
+    sector: {
+      type: String,
+    },
+    ubudehe: {
+      type: String,
+    },
+
+    phone: {
+      type: String,
+    },
+    education: {
+      type: String,
+    },
+    codingExperience: {
+      type: Boolean,
+    },
+    githubAccount: {
+      type: Boolean,
+    },
+    githubLink: {
+      type: String,
+    },
+    competenceIct: {
+      type: String,
+    },
+    codingLevel: {
+      type: String,
+    },
     occupation: {
       type: String,
     },
-    schoolName:String,
-    hourFrom:String,
-    hourTo:String,
-    isScheduled:Boolean
+
+    ownLaptop: {
+      type: Boolean,
+    },
+    howObtainLaptop: {
+      type: String,
+    },
+    reasonJoinUs: {
+      type: String,
+    },
+
+    ableToParticipate: {
+      type: Boolean,
+    },
+    expectation: {
+      type: String,
+    },
+    dream: {
+      type: String,
+    },
+
+    hears: {
+      type: String,
+    },
   },
 
   {

@@ -18,7 +18,7 @@ const applicationFormShema = new mongoose.Schema(
       type: String,
     },
     age: {
-      type: Number,
+      type: String,
     },
     education: {
       type: String,
